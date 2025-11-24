@@ -43,13 +43,45 @@ Borrow out = A'Bin + A'B + BBin
 Write the detailed procedure here
 
 **Program:**
+~~~
+module exfull (a,b,c,sum,carry);
 
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
+input a,b,c;
+
+output sum,carry;
+
+xor g1(sum,a,b,c);
+
+assign carry =(a&b)|(b&c)|(c&a);
+
+endmodule
+
+full subtractor module fullsub(a,b,c,diff,borrow);
+
+input a,b,c;
+
+output diff,borrow;
+
+xor g1(diff,a,b);
+
+assign borrow =(b&c)|(~a&c)|(~a&b);
+
+endmodule
+~~~
+Developed by:ABHINAV GURU R RegisterNumber:25016474
+
 
 **RTL Schematic**
+<img width="1864" height="934" alt="image" src="https://github.com/user-attachments/assets/657548a4-5ef8-4d68-9df1-fb311f07746d" />
+<img width="1912" height="954" alt="image" src="https://github.com/user-attachments/assets/618ff97b-8e09-41d8-af63-818307a24837" />
+
+
 
 **Output Timing Waveform**
+<img width="1910" height="993" alt="image" src="https://github.com/user-attachments/assets/db5015dc-30a3-433d-bd39-8335b5979ccc" />
+<img width="1898" height="964" alt="image" src="https://github.com/user-attachments/assets/6091468e-df57-4e62-ae2c-e6e9800f054a" />
+
+
 
 **Result:**
 
